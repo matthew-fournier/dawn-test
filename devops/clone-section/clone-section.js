@@ -1,7 +1,7 @@
 const term = require('terminal-kit').terminal
 const fs = require('fs-extra')
 const replace = require('replace-in-file')
-const { terminate, cancelKeys } = require('../helpers/helpers')
+const { terminate, cancelKeys, input } = require('../helpers/helpers')
 
 
 // const updateFile = async (name, oldName, newName, newPath) => {
@@ -14,20 +14,30 @@ const { terminate, cancelKeys } = require('../helpers/helpers')
 //   })
 // }
 
-;(() => {
+;(async () => {
   try {
     cancelKeys()
 
-    console.log('xx')
+    const sectionFiles = await fs.readdir('sections')
+    term.cyan('Section folder to clone:')
+    const selectedOption = await term.gridMenu(sectionFiles.map((file => file.split('.')[0]))).promise
 
-    // const sectionFiles = await fs.readdir('src/views/sections')
-    // term.cyan('Section folder to clone:')
-    // const selectedOption = await term.gridMenu(sectionFiles).promise
-    // const existingFolder = selectedOption.selectedText
-    // const newSectionName = await input('\nNew Section Filename')
+    const sectionToCloneName = selectedOption.selectedText
+    const newSectionName = await input('\nNew Section Filename')
 
-    // const oldPath = `src/views/sections/${existingFolder}`
-    // const newPath = `src/views/sections/${newSectionName}`
+    console.log(sectionToCloneName)
+    console.log(newSectionName)
+
+
+    const paths = [
+      'sections/SECTION_NAME.liquid',
+      'assets/SECTION_NAME.liquid'
+    ]
+
+
+
+    // const oldPath = `sections/${existingFolder}`
+    // const newPath = `sections/${newSectionName}`
 
     // const exists = await fs.pathExists(newPath)
     // if (exists) { throw Error(`${newSectionName} already exists`) }
