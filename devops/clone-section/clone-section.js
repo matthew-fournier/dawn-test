@@ -3,7 +3,6 @@ const fs = require('fs-extra')
 const replace = require('replace-in-file')
 const { terminate, cancelKeys, input } = require('../helpers/helpers')
 
-
 // const updateFile = async (name, oldName, newName, newPath) => {
 //   const newFilePath = `${newPath}/${name.replace(oldName, newName)}`
 //   await fs.rename(`${newPath}/${name}`, newFilePath)
@@ -20,7 +19,7 @@ const { terminate, cancelKeys, input } = require('../helpers/helpers')
 
     const sectionFiles = await fs.readdir('sections')
     term.cyan('Section folder to clone:')
-    const selectedOption = await term.gridMenu(sectionFiles.map((file => file.split('.')[0]))).promise
+    const selectedOption = await term.gridMenu(sectionFiles.map(file => file.split('.')[0])).promise
 
     const sectionToCloneName = selectedOption.selectedText
     const newSectionName = await input('\nNew Section Filename')
@@ -28,13 +27,13 @@ const { terminate, cancelKeys, input } = require('../helpers/helpers')
     console.log(sectionToCloneName)
     console.log(newSectionName)
 
-
-    const paths = [
+    await Promise.allSettled([
       'sections/SECTION_NAME.liquid',
-      'assets/SECTION_NAME.liquid'
-    ]
-
-
+      'assets/SECTION_NAME.css',
+      'assets/SECTION_NAME.js'
+    ].map(async (path) => {
+      console.log(path)
+    }))
 
     // const oldPath = `sections/${existingFolder}`
     // const newPath = `sections/${newSectionName}`
