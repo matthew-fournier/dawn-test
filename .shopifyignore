@@ -4,4 +4,8 @@ build_tools/
 node_modules/
 dev-tokens.yml
 yarn.lock
+.prettierignore
+.prettierrc.json
+.stylelintignore
+.stylelintrc
 .shopifyignore.bak

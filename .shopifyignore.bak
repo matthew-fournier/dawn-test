@@ -4,6 +4,11 @@ build_tools/
 node_modules/
 dev-tokens.yml
 yarn.lock
+.prettierignore
+.prettierrc.json
+.stylelintignore
+.stylelintrc
+.eslintrc.js
 .shopifyignore.bak
 
 config/settings_data.json
