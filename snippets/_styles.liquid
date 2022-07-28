@@ -1,0 +1,21 @@
+{% comment %}
+  ===============================================================================
+    GLOBAL CSS VARIABLES
+  ===============================================================================
+{% endcomment %}
+
+{% style %}
+  :root {
+
+  }
+{% endstyle %}
+
+{% comment %}
+  ===============================================================================
+    Import Global CSS FIles
+  ===============================================================================
+{% endcomment %}
+
+{{ 'normalize.css' | asset_url | stylesheet_tag }}
+{{ 'layout.css' | asset_url | stylesheet_tag }}
+{{ 'base.css' | asset_url | stylesheet_tag }}
