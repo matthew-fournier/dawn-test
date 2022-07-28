@@ -3,12 +3,16 @@
   "version": "1.0.0",
   "description": "[![Build status](https://github.com/shopify/dawn/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Shopify/dawn/actions/workflows/ci.yml?query=branch%3Amain) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?color=informational)](/.github/CONTRIBUTING.md)",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "fs-extra": "^10.1.0",
+    "replace-in-file": "^6.3.5",
+    "terminal-kit": "^2.4.0"
+  },
   "devDependencies": {},
   "scripts": {
     "serve": "shopify theme serve",
     "pull": "shopify theme serve",
-    "script": "node devops/test-script.js"
+    "clone-section": "node devops/clone-section/clone-section.js"
   },
   "repository": {
     "type": "git",
