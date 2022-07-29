@@ -6,7 +6,8 @@
   "scripts": {
     "serve": "shopify theme serve",
     "pull": "shopify theme serve",
-    "clone-section": "node devops/clone-section/clone-section.js"
+    "clone-section": "node devops/clone-section/clone-section.js",
+    "new-section": "node devops/new-section/new-section.js"
   },
   "dependencies": {
     "fs-extra": "^10.1.0",
