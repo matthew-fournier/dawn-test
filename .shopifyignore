@@ -1,9 +1,11 @@
 package.json
 package-lock.json
+scripts/
 build_tools/
 node_modules/
 dev-tokens.yml
 yarn.lock
+.babelrc
 .prettierignore
 .prettierrc.json
 .stylelintignore
