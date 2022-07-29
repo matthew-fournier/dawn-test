@@ -45,8 +45,8 @@ const cloneFile = async (path, sectionToCloneName, newSectionName) => {
 
     const cloneRes = await Promise.allSettled([
       'sections/SECTION_NAME.liquid',
-      'assets/SECTION_NAME.css',
-      'assets/SECTION_NAME.js'
+      'assets/section-SECTION_NAME.css',
+      'assets/section-SECTION_NAME.js'
     ].map(async (path) => cloneFile(path, sectionToCloneName, newSectionName)))
 
     const message = cloneRes
