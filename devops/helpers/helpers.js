@@ -21,5 +21,4 @@ const input = async (message) => {
   return await term.inputField({ minLength: 1 }).promise
 }
 
-
 module.exports = { cancelKeys, terminate, input }
