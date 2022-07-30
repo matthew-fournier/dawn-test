@@ -1,20 +1,22 @@
 // // Core
-// import '@scripts/core/a11y'
+import '@scripts/theme/core/a11y'
 
 // // Components
-// import '@scripts/components/drawers'
-// import '@scripts/components/required-validation'
-// import '@scripts/components/dropdown-select'
+// import '@scripts/theme/components/drawers'
+// import '@scripts/theme/components/required-validation'
+// import '@scripts/theme/components/dropdown-select'
 
 // // Cart
-// import '@scripts/cart/cart-api'
-// import '@scripts/cart/components/atc-form'
-// import '@scripts/cart/components/cart-condition-display'
-// import '@scripts/cart/components/cart-info'
-// import '@scripts/cart/components/cart-items'
-// import '@scripts/cart/components/cart-note'
+import cartAPI from '@scripts/theme/cart/cart-api'
+// import '@scripts/theme/cart/components/atc-form'
+// import '@scripts/theme/cart/components/cart-condition-display'
+// import '@scripts/theme/cart/components/cart-info'
+// import '@scripts/theme/cart/components/cart-items'
+// import '@scripts/theme/cart/components/cart-note'
 
 // // StoreFront
-// import '@scripts/storefront/storefront'
-
-console.log('hiew')
+// import '@scripts/theme/storefront/storefront'
+;(async () => {
+  await cartAPI.cart()
+  console.log(cartAPI.getCartData())
+})()

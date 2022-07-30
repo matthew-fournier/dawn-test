@@ -1,10 +1,13 @@
-package.json
-package-lock.json
 scripts/
 build_tools/
 node_modules/
+
+package.json
+package-lock.json
 dev-tokens.yml
 yarn.lock
+jsconfig.json
+
 .babelrc
 .prettierignore
 .prettierrc.json

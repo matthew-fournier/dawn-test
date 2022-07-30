@@ -1,5 +1,3 @@
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const CopyPlugin = require('copy-webpack-plugin')
 const WebpackWatchedGlobEntries = require('webpack-watched-glob-entries-plugin')
 const path = require('path')
 const term = require('terminal-kit').terminal
@@ -9,16 +7,19 @@ const assetsPath = path.resolve(__dirname, 'assets')
 const removeFoldersFromPath = (path) => path.replace(/^.*[\\\/]/, '') // eslint-disable-line
 
 module.exports = (env, argv) => ({
-  devtool: argv.mode === 'development' ? 'eval-cheap-source-map' : 'none',
-  stats: argv.mode === 'development' ? 'errors-only' : { children: false },
+  devtool: 'none',
+  stats: 'errors-only',
+  mode: 'production',
+  target: 'web',
   entry: WebpackWatchedGlobEntries.getEntries(
     [
-      path.resolve(__dirname, 'scripts/theme/theme.js')
+      path.resolve(__dirname, 'scripts/theme/theme.js'),
+      path.resolve(__dirname, 'scripts/sections/*.js')
     ]
   ),
   output: {
     filename: (pathData) => {
-      return '/' + removeFoldersFromPath(pathData.chunk.name) + '.js'
+      return removeFoldersFromPath(pathData.chunk.name) + '.min.js'
     },
     path: assetsPath
   },
@@ -70,7 +71,7 @@ module.exports = (env, argv) => ({
             outputCommand('yarn serve', 'Launch dev theme preview')
             outputCommand('yarn push', 'Build and push to pre-exisiting theme')
             outputCommand('yarn push-new', 'Build and push to new theme')
-            outputCommand('yarn sync', 'Pull down settings from a theme')
+            outputCommand('yarn pull', 'Pull down settings from a theme')
             outputCommand('shopify login', 'Authenticates you with Shopify CLI')
             outputCommand('shopify switch', 'Switch between stores without logging in/out')
             outputCommand('yarn new-section', 'Create a new section from an availiable template')
@@ -97,7 +98,7 @@ module.exports = (env, argv) => ({
   },
   watchOptions: {
     poll: true,
-    ignored: ['**/node_modules']
+    ignored: ['**/assets', '**/node_modules']
   },
   module: {
     rules: [

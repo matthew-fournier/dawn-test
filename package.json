@@ -1,22 +1,21 @@
 {
-  "name": "dawntest",
+  "name": "pointer-starter",
   "version": "1.0.0",
   "description": "Pointer Starter Theme 3.0",
   "main": "webpack.config.js",
+  "author": "Pointer Creative",
   "scripts": {
-    "dev": "shopify whoami && webpack --watch --mode=development",
-    "serve": "shopify theme serve",
-    "pull": "shopify theme serve",
+    "dev": "webpack --watch",
+    "build": "webpack",
+    "serve": "shopify whoami && shopify theme serve",
+    "push": "yarn build && shopify theme push",
+    "push-new": "yarn build && shopify theme push --unpublished",
+    "pull": "shopify theme pull",
     "clone-section": "node devops/clone-section/clone-section.js",
     "new-section": "node devops/new-section/new-section.js"
   },
   "dependencies": {
-    "@shopify/theme-a11y": "^4.1.1",
-    "fs-extra": "^10.1.0",
-    "replace-in-file": "^6.3.5",
-    "standard": "^17.0.0",
-    "stylelint": "^14.9.1",
-    "terminal-kit": "^2.4.0"
+    "@shopify/theme-a11y": "^4.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.18.9",
@@ -25,10 +24,9 @@
     "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/preset-env": "^7.18.9",
     "@babel/runtime": "^7.8.4",
+    "@shopify/babel-preset": "^23.1.1",
     "babel-loader": "^8.2.5",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^5.1.1",
     "eslint": "^8.19.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
@@ -42,7 +40,12 @@
     "webpack": "^4.41.6",
     "webpack-cli": "^4.3.0",
     "webpack-dev-server": "^3.11.2",
-    "webpack-watched-glob-entries-plugin": "^2.1.10"
+    "webpack-watched-glob-entries-plugin": "^2.1.10",
+    "fs-extra": "^10.1.0",
+    "replace-in-file": "^6.3.5",
+    "standard": "^17.0.0",
+    "stylelint": "^14.9.1",
+    "terminal-kit": "^2.4.0"
   },
   "standard": {
     "globals": [
@@ -62,24 +65,5 @@
       "dist/**",
       "src/assets/**"
     ]
-  },
-  "babel": {
-    "plugins": [
-      "@babel/plugin-transform-async-to-generator",
-      "@babel/transform-runtime"
-    ],
-    "presets": [
-      "@babel/preset-env"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/matthew-fournier/dawn-test.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/matthew-fournier/dawn-test/issues"
-  },
-  "homepage": "https://github.com/matthew-fournier/dawn-test#readme"
+  }
 }
