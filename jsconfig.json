@@ -1,13 +1,24 @@
 {
-    "compilerOptions": {
-        "baseUrl": "./",
-        "paths": {
-            "@scripts/*": [
-                "scripts/*"
-            ]
-        }
-    },
-    "exclude": [
-        "node_modules"
-    ]
+  "compilerOptions": {
+    "baseUrl": "./",
+    "target": "es2020",
+    "module": "esnext",
+    "jsx": "react",
+    "checkJs": true,
+    "lib": ["esnext", "dom"],
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@cart*": ["scripts/theme/cart*"],
+      "@components*": ["scripts/theme/components*"],
+      "@core*": ["scripts/theme/core*"],
+      "@storefront*": ["scripts/theme/storefront*"],
+      "@sections*": ["scripts/sections*"],
+      "@snippets*": ["scripts/snippets*"]
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }

@@ -1,11 +1,11 @@
-import cartAPI from '@scripts/cart/cart-api'
+import cartAPI from '@cart/cart-api'
 import {
   cartItemTemplate,
   cartItemTemplateEmpty,
   cartItemPrice,
   bundleChildrenPrice,
   bundleChildrenDetails
-} from '@scripts/cart/templates/cart-items-templates'
+} from '@cart/templates/cart-items-templates'
 
 (() => {
   if (

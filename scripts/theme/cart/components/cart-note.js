@@ -1,4 +1,4 @@
-import cartAPI from '@scripts/cart/cart-api'
+import cartAPI from '@cart/cart-api'
 
 (() => {
   if (typeof window.customElements.get('cart-note') !== 'undefined') { return }

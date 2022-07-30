@@ -1,6 +1,6 @@
-import cartAPI from '@scripts/cart/cart-api'
-import queryVariantsById from '@scripts/storefront/queries/queryVariantsById'
-import storefront from '@scripts/storefront/storefront'
+import cartAPI from '@cart/cart-api'
+import queryVariantsById from '@storefront/queries/queryVariantsById'
+import storefront from '@storefront/storefront'
 
 (() => {
   if (typeof window.customElements.get('atc-form') !== 'undefined') { return }

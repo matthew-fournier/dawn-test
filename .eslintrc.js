@@ -1,4 +1,6 @@
 module.exports = {
   extends: 'standard',
-  browser: true
+  env: {
+    browser: true
+  }
 }

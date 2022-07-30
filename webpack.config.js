@@ -92,7 +92,12 @@ module.exports = (env, argv) => ({
   ],
   resolve: {
     alias: {
-      '@scripts': path.resolve(__dirname, 'scripts')
+      '@cart': path.resolve(__dirname, 'scripts/theme/cart'),
+      '@components': path.resolve(__dirname, 'scripts/theme/components'),
+      '@core': path.resolve(__dirname, 'scripts/theme/core'),
+      '@storefront': path.resolve(__dirname, 'scripts/theme/storefront'),
+      '@sections': path.resolve(__dirname, 'scripts/sections'),
+      '@snippets': path.resolve(__dirname, 'scripts/snippets')
     },
     extensions: ['.ts', '.tsx', '.js']
   },

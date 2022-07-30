@@ -33,19 +33,19 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-standard": "^5.0.0",
-    "prettier": "^2.1.1",
-    "stylelint-config-prettier": "^8.0.1",
-    "stylelint-config-property-sort-order-smacss": "^8.0.0",
-    "stylelint-config-standard-scss": "^2.0.1",
-    "webpack": "^4.41.6",
-    "webpack-cli": "^4.3.0",
-    "webpack-dev-server": "^3.11.2",
-    "webpack-watched-glob-entries-plugin": "^2.1.10",
     "fs-extra": "^10.1.0",
+    "prettier": "^2.1.1",
     "replace-in-file": "^6.3.5",
     "standard": "^17.0.0",
     "stylelint": "^14.9.1",
-    "terminal-kit": "^2.4.0"
+    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-config-property-sort-order-smacss": "^8.0.0",
+    "stylelint-config-standard-scss": "^2.0.1",
+    "terminal-kit": "^2.4.0",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^4.3.0",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-watched-glob-entries-plugin": "^2.1.10"
   },
   "standard": {
     "globals": [

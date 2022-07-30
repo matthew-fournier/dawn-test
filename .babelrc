@@ -1,5 +1,8 @@
 {
-  "presets": ["@shopify/babel-preset/web"],
+  "presets": [
+    "@shopify/babel-preset/web",
+    "@babel/preset-env"
+  ],
   "plugins": [
     "@babel/plugin-transform-async-to-generator",
     "@babel/transform-runtime"
