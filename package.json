@@ -4,6 +4,7 @@
   "description": "Pointer Starter Theme 3.0",
   "main": "webpack.config.js",
   "author": "Pointer Creative",
+  "license": "MIT",
   "scripts": {
     "dev": "webpack --watch",
     "build": "webpack",
