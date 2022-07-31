@@ -1,0 +1,23 @@
+<script src="{{ 'section-FILENAME.min.js' | asset_url }}" defer="defer"></script>
+{{ 'section-FILENAME.css' | asset_url | stylesheet_tag }}
+
+<section-FILENAME class="FILENAME" aria-label="SECTION_NAME" data-section-FILENAME role="region" >
+  <div class="FILENAME container">
+    {% comment %}
+      ...
+    {% endcomment %}
+  </div>
+</section-FILENAME>
+
+{% schema %}
+  {
+    "name": "SECTION_NAME",
+    "presets": [{ "name": "SECTION_NAME" }],
+    "settings": [
+      {
+        "type": "header",
+        "content": "SECTION_NAME"
+      }
+    ]
+  }
+{% endschema %}
