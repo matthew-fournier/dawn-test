@@ -1,16 +1,17 @@
 scripts/
 build_tools/
 node_modules/
+scripts/**
+build_tools/**
+node_modules/**
 
 package.json
 package-lock.json
-dev-tokens.yml
+webpack.config.js
 yarn.lock
 jsconfig.json
 
-.babelrc
 .prettierignore
-.prettierrc.json
 .stylelintignore
 .stylelintrc
 .shopifyignore.bak

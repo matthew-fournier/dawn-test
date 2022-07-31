@@ -27,5 +27,6 @@ body {
 p {
   display: block;
   background-color: red;
+  color: blue;
   color: green;
 }
