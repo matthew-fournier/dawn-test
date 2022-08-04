@@ -1,3 +1,6 @@
+// Theme Styles
+import '../../styles/theme.scss'
+
 // // Core
 import '@core/a11y'
 

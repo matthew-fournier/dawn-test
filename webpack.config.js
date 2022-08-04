@@ -1,4 +1,5 @@
 const WebpackWatchedGlobEntries = require('webpack-watched-glob-entries-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 const term = require('terminal-kit').terminal
 
@@ -7,7 +8,7 @@ const assetsPath = path.resolve(__dirname, 'assets')
 const removeFoldersFromPath = (path) => path.replace(/^.*[\\\/]/, '') // eslint-disable-line
 
 module.exports = (env, argv) => ({
-  devtool: 'none',
+  devtool: false,
   stats: 'errors-only',
   mode: 'production',
   target: 'web',
@@ -24,6 +25,11 @@ module.exports = (env, argv) => ({
     path: assetsPath
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: (pathData) => {
+        return removeFoldersFromPath(pathData.chunk.name) + '.min.css'
+      }
+    }),
     function () {
       this.hooks.watchRun.tap('WatchRun', (comp) => {
         const changedTimes = comp.watchFileSystem.watcher.mtimes
@@ -97,7 +103,8 @@ module.exports = (env, argv) => ({
       '@core': path.resolve(__dirname, 'scripts/theme/core'),
       '@storefront': path.resolve(__dirname, 'scripts/theme/storefront'),
       '@sections': path.resolve(__dirname, 'scripts/sections'),
-      '@snippets': path.resolve(__dirname, 'scripts/snippets')
+      '@snippets': path.resolve(__dirname, 'scripts/snippets'),
+      '@styles': path.resolve(__dirname, 'styles')
     },
     extensions: ['.ts', '.tsx', '.js']
   },
@@ -111,9 +118,29 @@ module.exports = (env, argv) => ({
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        query: {
+        options: {
           presets: ['@babel/env']
         }
+      },
+      {
+        test: /\.(sc|sa|c)ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              url: false,
+              sourceMap: true
+            }
+          },
+          'postcss-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true
+            }
+          }
+        ]
       }
     ]
   }

@@ -15,7 +15,8 @@
       "@core*": ["scripts/theme/core*"],
       "@storefront*": ["scripts/theme/storefront*"],
       "@sections*": ["scripts/sections*"],
-      "@snippets*": ["scripts/snippets*"]
+      "@snippets*": ["scripts/snippets*"],
+      "@styles*": ["styles*"],
     }
   },
   "exclude": [

@@ -26,8 +26,10 @@
     "@babel/preset-env": "^7.18.9",
     "@babel/runtime": "^7.8.4",
     "@shopify/babel-preset": "^23.1.1",
+    "autoprefixer": "^9.7.4",
     "babel-loader": "^8.2.5",
     "babel-plugin-transform-runtime": "^6.23.0",
+    "css-loader": "^5.2.7",
     "eslint": "^8.19.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
@@ -35,9 +37,15 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-standard": "^5.0.0",
     "fs-extra": "^10.1.0",
+    "mini-css-extract-plugin": "^1.6.2",
+    "postcss": "^8.4.14",
+    "postcss-loader": "^3.0.0",
     "prettier": "^2.1.1",
     "replace-in-file": "^6.3.5",
+    "sass": "^1.54.2",
+    "sass-loader": "^9.0.3",
     "standard": "^17.0.0",
+    "style-loader": "^2.0.0",
     "stylelint": "^14.9.1",
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-property-sort-order-smacss": "^8.0.0",
@@ -62,9 +70,7 @@
       "localStorage"
     ],
     "ignore": [
-      "node_modules/**",
-      "dist/**",
-      "src/assets/**"
+      "node_modules/**"
     ]
   },
   "babel": {
@@ -83,7 +89,7 @@
       "browser": true
     }
   },
-  "stylelint":{
+  "stylelint": {
     "extends": [
       "stylelint-config-property-sort-order-smacss",
       "stylelint-config-standard-scss",
@@ -108,10 +114,17 @@
       "color-function-notation": null,
       "alpha-value-notation": null
     },
-    "ignoreFiles": ["node_modules/**"]
+    "ignoreFiles": [
+      "node_modules/**"
+    ]
   },
   "prettier": {
     "tabWidth": 2,
     "singleQuote": true
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
   }
 }
