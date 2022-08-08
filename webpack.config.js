@@ -106,7 +106,7 @@ module.exports = (env, argv) => ({
       '@snippets': path.resolve(__dirname, 'scripts/snippets'),
       '@styles': path.resolve(__dirname, 'styles')
     },
-    extensions: ['.ts', '.tsx', '.js']
+    extensions: ['.ts', '.tsx', '.js', '.scss']
   },
   watchOptions: {
     poll: true,

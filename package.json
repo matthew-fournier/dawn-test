@@ -51,7 +51,7 @@
     "stylelint-config-property-sort-order-smacss": "^8.0.0",
     "stylelint-config-standard-scss": "^2.0.1",
     "terminal-kit": "^2.4.0",
-    "webpack": "^4.41.6",
+    "webpack": "^4.46.0",
     "webpack-cli": "^4.3.0",
     "webpack-dev-server": "^3.11.2",
     "webpack-watched-glob-entries-plugin": "^2.1.10"

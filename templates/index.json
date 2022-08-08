@@ -1,5 +1,10 @@
 {
   "sections": {
+    "test_section": {
+      "type": "test-section",
+      "settings": {
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -210,6 +215,7 @@
     }
   },
   "order": [
+    "test_section",
     "image_banner",
     "rich_text",
     "featured_collection",
